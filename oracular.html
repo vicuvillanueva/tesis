@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modo oracular — Archivo Huemul ⇄ Estudio de Fonología</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="container">
+  <header class="topbar">
+    <h1>Modo oracular</h1>
+    <p class="subtitle">Explorá la historia como mazo de cartas: sacá una, filtrá, combiná.</p>
+  </header>
+
+  <nav class="toolbar">
+    <a href="index.html" rel="noopener">↩ Volver al inicio</a>
+    <a href="timeline.html" target="_blank" rel="noopener">Ver línea de tiempo ↗</a>
+    <div class="actions">
+      <button id="btnShuffle" class="btn">Sacar otra</button>
+      <button id="btnReset" class="btn outline">Reset</button>
+    </div>
+  </nav>
+
+  <section class="toolbar" id="filters">
+    <span class="kicker">Filtros</span>
+    <label>Tipo:
+      <select id="fTipo">
+        <option value="">Todos</option>
+        <option>texto</option>
+        <option>visual</option>
+        <option>audio</option>
+        <option>video</option>
+        <option>documento</option>
+      </select>
+    </label>
+    <label>Etiqueta:
+      <input id="fTag" type="text" placeholder="ej: Huemul, UBA, vocoder…" />
+    </label>
+  </section>
+
+  <main class="grid" id="oracular"></main>
+
+  <footer class="footer">
+    <small>© 2025 Vicu Villanueva</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/oracular.js"></script>
+</body>
+</html>
