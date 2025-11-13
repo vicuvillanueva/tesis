@@ -7,49 +7,53 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body class="container">
-  <header class="topbar">
-    <h1>Archivo Huemul ⇄ Estudio de Fonología</h1>
-    <p class="subtitle">Cartografías entre ciencia, Estado y arte electrónico (1950–1970s)</p>
-  </header>
+<body>
 
-  <main class="intro">
-    <p>
-      Este archivo presenta tarjetas (texto, imagen, audio y video) que narran
-      el recorrido de tecnologías nacidas en contextos científico-bélicos
-      —como los osciladores de posguerra— y su reapropiación en el
-      <strong>Estudio de Fonología Musical de la UBA</strong>, con ramificaciones
-      regionales y globales. Podés explorar en dos modos:
-      <strong>cronológico</strong> (línea de tiempo) u <strong>oracular</strong> (descubrimiento).
-    </p>
+  <!-- 🔥 Contenedor verdadero -->
+  <div class="container">
 
-    <div class="cta-row">
-      <a class="btn" href="timeline.html" target="_blank" rel="noopener">Ver línea de tiempo</a>
-      <a class="btn outline" href="oracular.html" target="_blank" rel="noopener">Explorar modo oracular</a>
-    </div>
+    <header class="topbar">
+      <h1>Archivo Huemul ⇄ Estudio de Fonología</h1>
+      <p class="subtitle">Cartografías entre ciencia, Estado y arte electrónico (1950–1970s)</p>
+    </header>
 
-    <section class="notes">
-      <h2>Cómo navegar</h2>
-      <ul>
-        <li>En la vista <strong>cronológica</strong>, las tarjetas están ordenadas por fecha.</li>
-        <li>En la vista <strong>oracular</strong>, sacás cartas al azar.</li>
-        <li>Ambas vistas incluyen <em>Volver al inicio</em> y atajos a la otra vista.</li>
-      </ul>
-    </section>
-  </main>
+    <main class="intro">
+      <p>
+        Este archivo presenta tarjetas (texto, imagen, audio y video) que narran
+        el recorrido de tecnologías nacidas en contextos científico-bélicos
+        —como los osciladores de posguerra— y su reapropiación en el
+        <strong>Estudio de Fonología Musical de la UBA</strong>, con ramificaciones
+        regionales y globales. Podés explorar en dos modos:
+        <strong>cronológico</strong> (línea de tiempo) u <strong>oracular</strong> (descubrimiento).
+      </p>
 
-  <footer class="footer">
-    <small>© 2025 Vicu Villanueva — Proyecto de TFG</small>
-  </footer>
+      <div class="cta-row">
+        <a class="btn" href="timeline.html" target="_blank" rel="noopener">Ver línea de tiempo</a>
+        <a class="btn outline" href="oracular.html" target="_blank" rel="noopener">Explorar modo oracular</a>
+      </div>
 
-  <!-- Linterna suave -->
+      <section class="notes">
+        <h2>Cómo navegar</h2>
+        <ul>
+          <li>En la vista <strong>cronológica</strong> las tarjetas están ordenadas por fecha.</li>
+          <li>En la vista <strong>oracular</strong>, sacás “cartas” al azar.</li>
+          <li>Ambas vistas incluyen <em>Volver al inicio</em> y atajos a la otra vista.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>© 2025 Vicu Villanueva — Proyecto de TFG</small>
+    </footer>
+
+  </div><!-- cierre container -->
+
+  <!-- Cursor-linterna -->
   <script>
     document.addEventListener("mousemove", (e) => {
-      document.body.style.backgroundImage =
-        `radial-gradient(circle at ${e.clientX}px ${e.clientY}px,
-          rgba(255,255,255,0.07) 0%,
-          transparent 60%),
-         radial-gradient(circle at 25% 20%, #fafbff, #eff2f9 70%)`;
+      document.body.classList.add("light-cursor");
+      document.body.style.setProperty("--cx", e.clientX + "px");
+      document.body.style.setProperty("--cy", e.clientY + "px");
     });
   </script>
 
