@@ -3,13 +3,14 @@ import { tarjetas } from "./data.js";
 const contenedor = document.getElementById("oracular");
 const btnShuffle = document.getElementById("btnShuffle");
 const btnReset = document.getElementById("btnReset");
-const fTipo = document.getElementById("fTipo");
-const fTag = document.getElementById("fTag");
 
 // Crear overlay reutilizable
 const overlay = document.createElement("div");
 overlay.className = "overlay";
 document.body.appendChild(overlay);
+
+// Array para seguir qué cartas ya salieron
+let usadas = [];
 
 function renderTarjeta(t) {
   contenedor.innerHTML = `
@@ -31,22 +32,18 @@ function renderTarjeta(t) {
   card.addEventListener("click", () => expandCard(t));
 }
 
-function filtrar() {
-  let f = tarjetas;
-  const tipo = fTipo.value;
-  const tag = fTag.value.toLowerCase();
-  if (tipo) f = f.filter((t) => t.tipo === tipo);
-  if (tag) f = f.filter((t) =>
-    t.etiquetas?.some((e) => e.toLowerCase().includes(tag))
-  );
-  return f;
-}
-
 function shuffle() {
-  const filtradas = filtrar();
-  if (!filtradas.length) return;
-  const random = filtradas[Math.floor(Math.random() * filtradas.length)];
-  renderTarjeta(random);
+  // reinicia mazo si ya salieron todas
+  if (usadas.length === tarjetas.length) usadas = [];
+
+  // selecciona una carta no usada
+  const disponibles = tarjetas.filter((_, i) => !usadas.includes(i));
+  const randomIndex = Math.floor(Math.random() * disponibles.length);
+  const carta = disponibles[randomIndex];
+  const originalIndex = tarjetas.indexOf(carta);
+
+  usadas.push(originalIndex);
+  renderTarjeta(carta);
 }
 
 function expandCard(t) {
@@ -72,23 +69,21 @@ function expandCard(t) {
   document.body.appendChild(expanded);
 
   const close = expanded.querySelector(".close-btn");
-  close.addEventListener("click", () => {
+  const cerrar = () => {
     overlay.classList.remove("show");
     expanded.remove();
-  });
-
-  overlay.addEventListener("click", () => {
-    overlay.classList.remove("show");
-    expanded.remove();
-  });
+  };
+  close.addEventListener("click", cerrar);
+  overlay.addEventListener("click", cerrar);
 }
 
 btnShuffle.addEventListener("click", shuffle);
 btnReset.addEventListener("click", () => {
+  usadas = [];
   contenedor.innerHTML = "";
 });
 
-// 🪄 Mostrar una tarjeta random al cargar la página
+// Mostrar una tarjeta random al cargar
 document.addEventListener("DOMContentLoaded", () => {
   shuffle();
 });

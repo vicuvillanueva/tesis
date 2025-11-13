@@ -6,6 +6,7 @@
   <title>Archivo Huemul ⇄ Estudio de Fonología</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body class="container">
   <header class="topbar">
     <h1>Archivo Huemul ⇄ Estudio de Fonología</h1>
@@ -30,8 +31,8 @@
     <section class="notes">
       <h2>Cómo navegar</h2>
       <ul>
-        <li>En la vista <strong>cronológica</strong> las tarjetas están ordenadas por fecha.</li>
-        <li>En la vista <strong>oracular</strong>, sacás “cartas” al azar y filtrás por tipo/etiquetas.</li>
+        <li>En la vista <strong>cronológica</strong>, las tarjetas están ordenadas por fecha.</li>
+        <li>En la vista <strong>oracular</strong>, sacás cartas al azar.</li>
         <li>Ambas vistas incluyen <em>Volver al inicio</em> y atajos a la otra vista.</li>
       </ul>
     </section>
@@ -40,29 +41,17 @@
   <footer class="footer">
     <small>© 2025 Vicu Villanueva — Proyecto de TFG</small>
   </footer>
+
+  <!-- Linterna suave -->
   <script>
-document.addEventListener("mousemove", (e) => {
-  const light = document.body;
-  const cursor = light.querySelector("::after");
-  document.body.style.setProperty("--cursor-x", e.clientX + "px");
-  document.body.style.setProperty("--cursor-y", e.clientY + "px");
-  document.body.style.backgroundImage = `
-    radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07) 0%, transparent 60%),
-    radial-gradient(circle at 25% 20%, #fafbff, #eff2f9 70%)
-  `;
-  document.body.style.setProperty("--light-x", e.clientX + "px");
-  document.body.style.setProperty("--light-y", e.clientY + "px");
-  document.body.style.setProperty("--light-gradient", 
-    \`radial-gradient(circle at \${e.clientX}px \${e.clientY}px, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.05) 70%)\`
-  );
-  document.body.style.setProperty("--after-transform", \`translate(\${e.clientX}px, \${e.clientY}px)\`);
-  document.body.style.setProperty("--after-x", e.clientX + "px");
-  document.body.style.setProperty("--after-y", e.clientY + "px");
-  document.body.style.setProperty("--after-opacity", "1");
-  document.body.style.setProperty("--after-size", "180px");
-  document.body.style.setProperty("--after-blur", "10px");
-});
-</script>
+    document.addEventListener("mousemove", (e) => {
+      document.body.style.backgroundImage =
+        `radial-gradient(circle at ${e.clientX}px ${e.clientY}px,
+          rgba(255,255,255,0.07) 0%,
+          transparent 60%),
+         radial-gradient(circle at 25% 20%, #fafbff, #eff2f9 70%)`;
+    });
+  </script>
 
 </body>
 </html>

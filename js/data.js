@@ -17,7 +17,7 @@ export const tarjetas = [
   },
   {
     titulo: "Ronald Richter junto a Juan Domingo Perón",
-    fecha: "marzo 1951",
+    fecha: "1951",
     tipo: "img",
     media: "assets/img/peronrichter.jpg",
     descripcion:
@@ -25,7 +25,7 @@ export const tarjetas = [
   },
   {
     titulo: "Anuncio de Perón en Mundo Atómico",
-    fecha: "marzo 1951",
+    fecha: "1951",
     tipo: "img",
     media: "assets/img/anuncio.jpg",
     descripcion:
@@ -41,7 +41,7 @@ export const tarjetas = [
   },
   {
     titulo: "Revista Mundo Atómico Nro 4 (PDF)",
-    fecha: "junio 1951",
+    fecha: "1951",
     tipo: "pdf",
     media: "assets/docs/mundoatomico.pdf",
     descripcion:
@@ -81,7 +81,7 @@ export const tarjetas = [
   },
   {
     titulo: "Video: Oscilador LEA en funcionamiento",
-    fecha: "noviembre 2025",
+    fecha: "2025",
     tipo: "video",
     media: "https://www.youtube.com/embed/EoysvfV5J6w",
     descripcion:
@@ -89,7 +89,7 @@ export const tarjetas = [
   },
   {
     titulo: "Video: Filtro Variable Rejection Filter Krohn-Hite",
-    fecha: "noviembre 2025",
+    fecha: "2025",
     tipo: "video",
     media: "https://www.youtube.com/embed/0E4KYAY3a1I",
     descripcion:
@@ -97,7 +97,7 @@ export const tarjetas = [
   },
   {
     titulo: "Video: Generador de ruido General Radio Company",
-    fecha: "noviembre 2025",
+    fecha: "2025",
     tipo: "video",
     media: "https://www.youtube.com/embed/meCl4aaIl-E",
     descripcion:
