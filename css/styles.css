@@ -1,17 +1,28 @@
 :root {
-  --bg: #f7f8fc;
-  --panel: rgba(255, 255, 255, 0.75);
-  --card: rgba(255, 255, 255, 0.9);
-  --ink: #1d1f27;
-  --muted: #7c8292;
-  --accent: #b7d5ff;
-  --accent-2: #e3baff;
-  --link: #93aaff;
-  --glow: rgba(186, 206, 255, 0.5);
-  --shadow: 0 8px 24px rgba(160, 180, 220, 0.25);
+  /* Fondo general: gradiente cálido suave inspirado en vaporwave solar */
+  --bg: #fbe7d2; /* durazno pastel */
+  --bg-2: #ffd4f0; /* rosa neón suave */
+  
+  /* Paneles: vidrio cálido translúcido */
+  --panel: rgba(255, 245, 232, 0.75);
+
+  /* Tarjetas: durazno brillante + luz interna */
+  --card: rgba(255, 227, 129, 0.9); /* amarillo-durazno pastel */
+
+  --ink: #261b28; /* violeta oscuro suave, más lindo que negro puro */
+  --muted: #7a6c7f;
+
+  --accent: #ff8ed8;      /* rosa neón dulce */
+  --accent-2: #ffc970;    /* mandarina pastel luminosa */
+  --link: #ff6fa8;        /* rosa-frutilla vibrante */
+
+  --glow: rgba(255, 170, 220, 0.45); /* glow rosa neón */
+  --shadow: 0 8px 28px rgba(255, 150, 200, 0.3);
+
   --radius: 18px;
   --transition: 0.3s ease;
 }
+
 
 /* === BASE === */
 * {
@@ -19,23 +30,32 @@
   transition: background var(--transition), transform var(--transition);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+
 html, body {
-  font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
   background: radial-gradient(circle at 25% 20%, #fafbff, #eff2f9 70%);
   color: var(--ink);
   overflow-x: hidden;
 }
 
-/* Ruido visual */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url('https://grainy-gradients.vercel.app/noise.svg');
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 0;
+.topbar h1 {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-decoration-thickness: 6px;
+  text-underline-offset: 6px;
+  font-weight: 800;
+  color: rgb(0, 0, 0); /* si querés full contraste */
 }
+
+/* === TITULOS DE TARJETAS: cursiva + subrayado === */
+.card h3,
+.tarjeta h3 {
+  font-style: italic;
+  font-weight: 700;
+}
+
 
 /* === CONTAINER === */
 .container {
@@ -309,24 +329,5 @@ body::before {
 @keyframes floatIn {
   from { opacity: 0; transform: translateY(20px) scale(0.97); }
   to { opacity: 1; transform: translateY(0) scale(1); }
-}
 
-/* === CURSOR LINTERNA (desktop) === */
-@media (hover:hover) {
-  body {
-    cursor: none;
-  }
-  body::after {
-    content: "";
-    position: fixed;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-    pointer-events: none;
-    mix-blend-mode: overlay;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
-    z-index: 10000;
-  }
 }
