@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap');
+
 :root {
   --bg: #f7f8fc;
   --panel: rgba(255, 255, 255, 0.75);
@@ -20,13 +22,14 @@
 }
 
 html, body {
-  font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+  font-family: 'IBM Plex Serif', 'Space Grotesk', sans-serif;
+  font-size: 16px;
   background: radial-gradient(circle at 25% 20%, #fafbff, #eff2f9 70%);
   color: var(--ink);
   overflow-x: hidden;
 }
 
-/* Ruido visual */
+/* Ruido visual sutil */
 body::before {
   content: "";
   position: fixed;
@@ -167,7 +170,6 @@ body::before {
 .card:hover::after {
   opacity: 1;
 }
-
 .card h3 {
   margin: 0;
   font-size: 1.1rem;
@@ -177,7 +179,6 @@ body::before {
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
 }
-
 .card img,
 .card iframe,
 .card video {
@@ -187,7 +188,6 @@ body::before {
   border-radius: 8px;
   background: #f3f5fb;
 }
-
 .card p {
   padding: 12px 16px;
   color: var(--ink);
@@ -207,7 +207,6 @@ body::before {
   justify-content: flex-start;
   border-top: 1px dashed rgba(180,190,220,0.4);
 }
-
 .timeline-horizontal::-webkit-scrollbar {
   height: 6px;
 }
@@ -215,8 +214,6 @@ body::before {
   background: rgba(150,150,255,0.3);
   border-radius: 10px;
 }
-
-/* TARJETAS TIMELINE */
 .tarjeta {
   flex: 0 0 260px;
   scroll-snap-align: start;
@@ -281,7 +278,6 @@ body::before {
   box-shadow: 0 15px 40px rgba(120,150,220,0.3);
   animation: fadeIn 0.3s ease;
 }
-
 .tarjeta.expanded img,
 .tarjeta.expanded iframe {
   width: 100%;
@@ -289,7 +285,6 @@ body::before {
   object-fit: contain;
   border-radius: 8px;
 }
-
 .close-btn {
   position: absolute;
   top: 0.6rem;
@@ -300,33 +295,30 @@ body::before {
   background: transparent;
   border: none;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -45%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
 }
-
 @keyframes floatIn {
   from { opacity: 0; transform: translateY(20px) scale(0.97); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* === CURSOR LINTERNA (desktop) === */
-@media (hover:hover) {
-  body {
-    cursor: none;
-  }
-  body::after {
-    content: "";
-    position: fixed;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-    pointer-events: none;
-    mix-blend-mode: overlay;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
-    z-index: 10000;
-  }
+/* === CURSOR LINTERNA visible + blend suave === */
+body::after {
+  content: "";
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.05) 70%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  transition: all 0.15s ease;
+}
+@keyframes floatLight {
+  0% { filter: brightness(1.1) blur(2px); }
+  100% { filter: brightness(1.4) blur(1px); }
 }

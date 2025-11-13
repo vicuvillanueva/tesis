@@ -40,5 +40,29 @@
   <footer class="footer">
     <small>© 2025 Vicu Villanueva — Proyecto de TFG</small>
   </footer>
+  <script>
+document.addEventListener("mousemove", (e) => {
+  const light = document.body;
+  const cursor = light.querySelector("::after");
+  document.body.style.setProperty("--cursor-x", e.clientX + "px");
+  document.body.style.setProperty("--cursor-y", e.clientY + "px");
+  document.body.style.backgroundImage = `
+    radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07) 0%, transparent 60%),
+    radial-gradient(circle at 25% 20%, #fafbff, #eff2f9 70%)
+  `;
+  document.body.style.setProperty("--light-x", e.clientX + "px");
+  document.body.style.setProperty("--light-y", e.clientY + "px");
+  document.body.style.setProperty("--light-gradient", 
+    \`radial-gradient(circle at \${e.clientX}px \${e.clientY}px, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.05) 70%)\`
+  );
+  document.body.style.setProperty("--after-transform", \`translate(\${e.clientX}px, \${e.clientY}px)\`);
+  document.body.style.setProperty("--after-x", e.clientX + "px");
+  document.body.style.setProperty("--after-y", e.clientY + "px");
+  document.body.style.setProperty("--after-opacity", "1");
+  document.body.style.setProperty("--after-size", "180px");
+  document.body.style.setProperty("--after-blur", "10px");
+});
+</script>
+
 </body>
 </html>
