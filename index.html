@@ -8,8 +8,42 @@
 </head>
 
 <body>
+<div id="boot-screen">
+  <div class="boot-inner">
 
-  <!-- 🔥 Contenedor verdadero -->
+    <div id="boot-phase">
+      <div class="boot-title">INICIALIZANDO SISTEMA</div>
+      <div class="boot-log">CARGANDO ARCHIVOS...</div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+    </div>
+
+    <div id="access-panel">
+      <div class="boot-title">ACCESO RESTRINGIDO</div>
+
+      <div class="access-question">
+        Pregunta de verificación:<br>
+        ¿En qué año se creó la bomba atómica?
+      </div>
+
+      <input
+        type="text"
+        id="password"
+        class="access-input"
+        autocomplete="off"
+      >
+
+      <button class="access-btn" onclick="checkAccess()">VERIFICAR</button>
+
+      <div class="access-error" id="access-error"></div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Contenedor verdadero -->
   <div class="container">
 
     <header class="topbar">

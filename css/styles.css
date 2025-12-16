@@ -1,28 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
 
 :root {
-  /* Fondo general: gradiente cálido suave inspirado en vaporwave solar */
-  --bg: #fbe7d2; /* durazno pastel */
-  --bg-2: #ffd4f0; /* rosa neón suave */
-  
-  /* Paneles: vidrio cálido translúcido */
-  --panel: rgba(255, 245, 232, 0.75);
+  --bg: #050505;
+  --bg-2: #0b0b0b;
 
-  /* Tarjetas: durazno brillante + luz interna */
-  --card: rgba(255, 227, 129, 0.9); /* amarillo-durazno pastel */
+  --panel: rgba(10, 15, 12, 0.85);
+  --card: rgba(12, 20, 16, 0.9);
 
-  --ink: #261b28; /* violeta oscuro suave, más lindo que negro puro */
-  --muted: #7a6c7f;
+  --ink: #caffdf;
+  --muted: #6fa88a;
 
-  --accent: #ff8ed8;      /* rosa neón dulce */
-  --accent-2: #ffc970;    /* mandarina pastel luminosa */
-  --link: #ff6fa8;        /* rosa-frutilla vibrante */
+  --accent: #00ff66;
+  --accent-2: #00cc55;
+  --link: #00ff88;
 
-  --glow: rgba(255, 170, 220, 0.45); /* glow rosa neón */
-  --shadow: 0 8px 28px rgba(255, 150, 200, 0.3);
+  --glow: rgba(0, 255, 100, 0.25);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 
-  --radius: 18px;
-  --transition: 0.3s ease;
+  --radius: 0px;
+  --transition: 0.25s ease;
 }
 
 
@@ -33,11 +28,10 @@
 }
 
 html, body {
-  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
-  background: radial-gradient(circle at 25% 20%, #fafbff, #eff2f9 70%);
-  color: var(--ink);
-  overflow-x: hidden;
+  background: #050505;
+  font-family: monospace;
 }
+
 
 .topbar h1 {
   font-style: italic;
