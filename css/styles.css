@@ -337,3 +337,19 @@ html, body {
   to { opacity: 1; transform: translateY(0) scale(1); }
 
 }
+
+/* === FIX MOBILE: color de texto consistente === */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+.container {
+  color: var(--ink);
+}
+
+.timeline-horizontal,
+.timeline-horizontal * {
+  color: var(--ink);
+}
+
