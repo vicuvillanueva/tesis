@@ -343,3 +343,16 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+@media (max-width: 768px) {
+  body {
+    color: var(--ink);
+  }
+
+  .timeline-horizontal,
+  .tarjeta,
+  .tarjeta p,
+  .tarjeta h3,
+  .tarjeta time {
+    color: var(--ink);
+  }
+}
